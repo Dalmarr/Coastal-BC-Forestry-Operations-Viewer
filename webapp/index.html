@@ -1,0 +1,184 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Coastal BC Forestry Operations Viewer</title>
+
+    <script type="module" src="https://js.arcgis.com/5.1/"></script>
+    <script type="module" src="js/app.js">
+    </script>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+
+<body>
+
+    <calcite-shell>
+
+        <calcite-navigation slot="header">
+
+            <calcite-navigation-logo slot="logo" heading="Coastal BC Forestry Operations Viewer"
+                description="Planning and field observation application">
+            </calcite-navigation-logo>
+
+        </calcite-navigation>
+
+
+        <calcite-shell-panel id="sidePanel" slot="panel-start" position="start" width-scale="l">
+
+            <calcite-panel heading="Filters">
+
+                <calcite-block heading="Planning Units" expanded>
+
+                    <calcite-label>
+                        Status
+
+                        <calcite-select id="unitStatus">
+                            <calcite-option value="">All statuses</calcite-option>
+                            <calcite-option value="Proposed">Proposed</calcite-option>
+                            <calcite-option value="Under Review">Under Review</calcite-option>
+                            <calcite-option value="Approved">Approved</calcite-option>
+                            <calcite-option value="Active">Active</calcite-option>
+                            <calcite-option value="Complete">Complete</calcite-option>
+                            <calcite-option value="Deferred">Deferred</calcite-option>
+                        </calcite-select>
+
+                    </calcite-label>
+
+
+                    <calcite-label>
+                        Priority
+
+                        <calcite-select id="unitPriority">
+                            <calcite-option value="">All priorities</calcite-option>
+                            <calcite-option value="Low">Low</calcite-option>
+                            <calcite-option value="Medium">Medium</calcite-option>
+                            <calcite-option value="High">High</calcite-option>
+                            <calcite-option value="Critical">Critical</calcite-option>
+                        </calcite-select>
+
+                    </calcite-label>
+
+
+                    <calcite-label>
+                        Activity
+
+                        <calcite-select id="unitActivity">
+                            <calcite-option value="">All activities</calcite-option>
+                            <calcite-option value="Harvest Planning">Harvest Planning</calcite-option>
+                            <calcite-option value="Road Planning">Road Planning</calcite-option>
+                            <calcite-option value="Field Assessment">Field Assessment</calcite-option>
+                            <calcite-option value="Environmental Review">Environmental Review</calcite-option>
+                            <calcite-option value="Silviculture">Silviculture</calcite-option>
+                        </calcite-select>
+
+                    </calcite-label>
+
+                </calcite-block>
+
+
+                <calcite-block heading="Field Observations" expanded>
+
+                    <calcite-label>
+                        Severity
+
+                        <calcite-select id="obsSeverity">
+                            <calcite-option value="">All severities</calcite-option>
+                            <calcite-option value="Low">Low</calcite-option>
+                            <calcite-option value="Moderate">Moderate</calcite-option>
+                            <calcite-option value="High">High</calcite-option>
+                            <calcite-option value="Critical">Critical</calcite-option>
+                        </calcite-select>
+
+                    </calcite-label>
+
+
+                    <calcite-label>
+                        Status
+
+                        <calcite-select id="obsStatus">
+                            <calcite-option value="">All statuses</calcite-option>
+                            <calcite-option value="Open">Open</calcite-option>
+                            <calcite-option value="Under Review">Under Review</calcite-option>
+                            <calcite-option value="Resolved">Resolved</calcite-option>
+                            <calcite-option value="Deferred">Deferred</calcite-option>
+                        </calcite-select>
+
+                    </calcite-label>
+
+                </calcite-block>
+
+
+                <calcite-button id="clearFilters" width="full" appearance="outline">
+                    Clear Filters
+                </calcite-button>
+
+            </calcite-panel>
+
+        </calcite-shell-panel>
+
+
+        <div id="detailRow">
+
+            <calcite-block id="selectedUnitBlock" heading="Selected Planning Unit" expanded>
+
+                <div id="unitDetails">
+                    <p>No planning unit selected.</p>
+                </div>
+
+            </calcite-block>
+
+
+            <calcite-block id="observationsBlock" heading="Related Field Observations" expanded>
+
+                <div id="observationResults">
+                    <p>Select a planning unit to view observations.</p>
+                </div>
+
+                <div id="observationNavigation" hidden>
+
+                    <calcite-button id="previousObservation" appearance="outline" scale="s">
+                        Previous
+                    </calcite-button>
+
+                    <span id="observationCounter"></span>
+
+                    <calcite-button id="nextObservation" appearance="outline" scale="s">
+                        Next
+                    </calcite-button>
+
+                </div>
+
+            </calcite-block>
+
+        </div>
+
+
+        <arcgis-map id="mapView" item-id="24aa3af7044247798c4ecf2d001fde60">
+
+            <arcgis-zoom slot="top-left"></arcgis-zoom>
+            <arcgis-home slot="top-left"></arcgis-home>
+
+            <arcgis-expand slot="top-right">
+                <arcgis-layer-list></arcgis-layer-list>
+            </arcgis-expand>
+
+            <arcgis-expand slot="top-right">
+                <arcgis-legend></arcgis-legend>
+            </arcgis-expand>
+
+        </arcgis-map>
+
+
+    </calcite-shell>
+</body>
+
+</html>

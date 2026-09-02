@@ -1,0 +1,50 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+calcite-shell {
+    width: 100%;
+    height: 100vh;
+}
+
+arcgis-map {
+    width: 100%;
+    height: 100%;
+}
+
+#sidePanel {
+    height: 100%;
+    overflow-y: auto;
+}
+
+#detailRow {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 12px;
+    align-items: start;
+}
+
+#selectedUnitBlock,
+#observationsBlock {
+    min-width: 0;
+}
+
+#observationResults calcite-card {
+    width: 100%;
+}
+
+#observationNavigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+#observationCounter {
+    white-space: nowrap;
+}

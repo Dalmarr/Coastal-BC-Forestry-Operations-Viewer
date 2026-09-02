@@ -1,0 +1,19 @@
+# ArcGIS Pro temporary / lock files
+*.lock
+*.sr.lock
+*.tmp
+
+# ArcGIS Pro backups
+*.aprx.backup
+
+#ArcGIS Pro project folders
+gis/
+data/
+
+# Python
+__pycache__/
+*.pyc
+
+# OS clutter
+.DS_Store
+Thumbs.db
