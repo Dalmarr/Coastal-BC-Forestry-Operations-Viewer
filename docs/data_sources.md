@@ -213,26 +213,25 @@ These features support data governance, auditing, quality assurance, and future 
 
 ---
 
-## Data Architecture
+## Final Publishing Architecture
 
-The project geodatabase is organized into three functional categories:
-
-### Source / Staging
-
-- `VRI_StudyArea`
-- `Forest_Roads_StudyArea`
-- `Stream_Networks_StudyArea`
-- `Study_Area`
-
-### Publishing
+### Reference Layers
 
 - `VRI_StudyArea_Web`
 - `Forest_Roads_Web`
 - `Streams_Web`
 
-### Operational
+### Operational Publishing Layers
 
-- `Planning_Units`
-- `Field_Observations`
+- `Planning_Units_web`
+- `Field_Observations_web`
 
-This structure preserves authoritative source data while maintaining lightweight, application-ready layers for web publishing and enterprise-style GIS workflows.
+### Public Observation View
+
+- `Field_Observations_public`
+
+`Field_Observations_web` is retained as the editable hosted source layer.
+`Field_Observations_public` is a read-only hosted feature layer view used by
+the public web map and custom application.
+
+This separates operational editing capability from public data consumption.
