@@ -18,6 +18,46 @@ Vancouver Island.
 > This project is not affiliated with or representative of any real-world data 
 > belonging to or produced any forestry company.
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+  - [Planning Unit Filtering](#planning-unit-filtering)
+  - [Field Observation Filtering](#field-observation-filtering)
+  - [Planning Unit Detail View](#planning-unit-detail-view)
+  - [Related Field Observations](#related-field-observations)
+  - [Web Map Controls](#web-map-controls)
+- [Architecture](#architecture)
+  - [Field Observation Publishing Pattern](#field-observation-publishing-pattern)
+- [Data](#data)
+  - [Study Area](#study-area)
+  - [Planning Units](#planning-units)
+  - [Derived Planning Attributes](#derived-planning-attributes)
+  - [Field Observations](#field-observations)
+- [Web Application](#web-application)
+  - [Application Structure](#application-structure)
+  - [JavaScript Organization](#javascript-organization)
+  - [Dynamic Filtering](#dynamic-filtering)
+  - [Planning Unit Selection](#planning-unit-selection)
+  - [Cross-Layer Query](#cross-layer-query)
+- [Dashboard](#dashboard)
+- [Technology Stack](#technology-stack)
+  - [GIS](#gis)
+  - [Web Development](#web-development)
+  - [Spatial Analysis](#spatial-analysis)
+  - [Data Management](#data-management)
+  - [Coordinate System](#coordinate-system)
+- [QA and Testing](#qa-and-testing)
+  - [Data QA](#data-qa)
+  - [Web Application Testing](#web-application-testing)
+- [Limitations](#limitations)
+- [Data Sources](#data-sources)
+  - [Vegetation Resources Inventory](#vegetation-resources-inventory)
+  - [Forest Roads](#forest-roads)
+  - [Stream Network](#stream-network)
+  - [Synthetic Operational Data](#synthetic-operational-data)
+- [Purpose](#purpose)
+
  ## Overview
 
 The Coastal BC Forestry Operations Viewer is an independent web GIS project designed to demonstrate an end-to-end forestry-oriented GIS operational planning.
@@ -276,3 +316,57 @@ query.where = `Related_Unit = '${unitId}'`;
 ```
 This creates an interactive relationship between planning units and their associated field observations.
 
+## Dashboard
+The project also includes an ArcGIS Dashboard:
+
+[Coastal BC Forestry Operations Dashboard](https://sqg.maps.arcgis.com/apps/dashboards/0630960a921a4c0a94dac14c3e672151#)
+
+The dashboard provides a higher-level operational view of the same hosted GIS data.
+
+It is designed to summarize planning and field-observation information through a combination of:
+
+- interactive mapping
+- indicators
+- charts
+- planning-unit summaries
+- field-observation summaries
+- filters
+
+The dashboard complements the custom web application by providing a monitoring-oriented interface, while the JavaScript application provides more detailed feature interaction and related-record querying.
+
+## Technology Stack
+### GIS
+- ArcGIS Pro
+- ArcGIS Online
+- ArcGIS Web Maps
+- ArcGIS Dashboards
+
+### Web Development
+- ArcGIS Maps SDK for JavaScript
+- Calcite Design System
+- JavaScript
+- HTML
+- CSS
+
+### Spatial Analysis
+- Spatial Join
+- Largest Overlap
+- Near analysis
+- Clip tool
+- Feature merging
+- Attribute calculation
+- Coded domains
+- Global IDs
+
+### Data Management
+- Geodatabase design
+- Field curation
+- Schema preparation
+- Hosted feature publishing
+- Source / staging / publishing separation
+- Operational and reference-layer organization
+
+### Coordinate System
+Project data were prepared using: __NAD 1983 BC Environment Albers — EPSG:3005__
+
+## 
