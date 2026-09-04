@@ -21,6 +21,7 @@ Vancouver Island.
 ## Table of Contents
 
 - [Overview](#overview)
+- [Purpose](#purpose)
 - [Features](#features)
   - [Planning Unit Filtering](#planning-unit-filtering)
   - [Field Observation Filtering](#field-observation-filtering)
@@ -63,7 +64,14 @@ Vancouver Island.
 The Coastal BC Forestry Operations Viewer is an independent web GIS project designed to demonstrate an end-to-end forestry-oriented GIS operational planning.
 The project combines public Government of British Columbia forestry and environmental datasets with synthetic operational planning and field observation data for a study area focused on Campbell River, Vancouver Island.
 The workflow begins with data preparation and spatial analysis in ArcGIS Pro, continues through hosted feature services and ArcGIS Online, and culminates in a custom web application built with the ArcGIS Maps SDK for JavaScript and Calcite Design System.
-The project was developed to demonstrate practical skills in spatial data management, hosted GIS services, web mapping, dashboard development, JavaScript GIS application development, and operational GIS workflow design.
+The project was developed to demonstrate practical skills in spatial data management, hosted GIS services, web mapping, dashboard development, and JavaScript GIS application development.
+
+
+## Purpose
+
+This project was created to demonstrate the integration of GIS, spatial data management, hosted web services, and application development.
+
+The focus is not simply on producing a map, but on building a complete GIS pipeline from source data and spatial analysis through hosted services, operational visualization, and custom web application behaviour.
 
 ---
 
@@ -163,12 +171,12 @@ ArcGIS Online Hosted Feature Services
 Custom JavaScript Application
 ```
 
-The workflow separates source and processing data from web-oriented publishing layers. This allows the original spatial datasets to be preserved while smaller, curated schemas are exposed to the web application.
+This separates source and processing data from web-oriented publishing layers. This allows the original spatial datasets to be preserved while smaller, curated schemas are exposed to the web application.
 
 
 ### Field Observation Publishing Pattern
 
-The field-observation workflow uses a separate public view:
+The field observation layer uses a separate public view:
 ```
 Field_Observations_web
 Private / editable hosted feature layer
@@ -247,7 +255,7 @@ Attributes include:
 - Source
 - Notes
 
-Controlled domains, Global IDs, editor tracking, and attachment capability were configured to support an enterprise-style operational data workflow.
+Controlled domains, Global IDs, editor tracking, and attachment capability were configured to support an enterprise-style data analysis operation.
 
 
 ## Web Application
@@ -412,4 +420,76 @@ Application testing included:
 
 The application was also tested through its public GitHub Pages deployment.
 
+## Limitations
 
+This project is intended as a technical GIS portfolio demonstration and is not an operational forestry system.
+
+Key limitations include:
+
+- planning-unit data are synthetic;
+- field observation data are synthetic;
+- operational statuses, priorities, schedules, personnel, and notes are fictional;
+- operational scenarios have been simplified;
+- the project does not represent actual company business processes;
+- no production ArcGIS Enterprise environment is used;
+- authentication and role-based access are simplified for portfolio access;
+- the application is not intended for forestry, environmental, engineering, or land-management decision-making.
+
+## Vegetation Resources Inventory
+
+__Government of British Columbia - VRI 2025 Forest Vegetation Composite Polygons__
+
+The VRI dataset provides forest inventory attributes used for reference mapping and planning-unit analysis.
+
+Selected information includes:
+
+- tree species
+- species composition
+- projected stand age
+- projected stand height
+- crown closure
+- site index
+- stand volume
+- BEC zone and subzone
+- harvest information
+- free-to-grow information
+
+The provincial dataset was clipped to the study area and reduced to an application-oriented publishing schema.
+
+### Forest Roads
+
+__Government of British Columbia - Forest Tenure Road Section Lines__
+
+The road dataset provides forestry-specific transportation and access context.
+
+Road features were clipped to the study area, curated for web use, and used to calculate planning-unit proximity to mapped forest roads.
+
+### Stream Network
+
+__Government of British Columbia - Freshwater Atlas Stream Network__
+
+Stream data were selected from watershed groups intersecting the study area.
+
+Included watershed groups:
+
+- CAMB
+- COMX
+- TSIT
+- SALM
+- GOLD
+- CLAY
+- NIMP
+- ALBN
+
+The selected stream feature classes were merged, clipped to the study area, and reduced to fields relevant to mapping and analysis.
+
+The resulting layer was used both for environmental context and for planning-unit nearest-stream analysis.
+
+### Synthetic Operational Data
+
+The following datasets were created specifically for this project:
+
+- Planning Units
+- Field Observations
+
+All operational attributes associated with these datasets are fictional and intended solely to demonstrate GIS data management, spatial analysis, hosted GIS services, and application development.
