@@ -183,6 +183,16 @@ Attributes include:
 
 Coded-value domains are used to standardize status, priority, and activity fields.
 
+Final publishing layer includes:
+
+- leading species from largest-overlap VRI polygon
+- average stand age
+- average stand height
+- average crown closure
+- nearest forest road
+- nearest stream
+- stream intersection indicator
+
 ### Field Observations
 
 **Dataset:** `Field_Observations`  
