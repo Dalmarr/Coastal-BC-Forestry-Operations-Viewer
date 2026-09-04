@@ -4,17 +4,17 @@ An independent web GIS project demonstrating forestry-oriented spatial data
 management, hosted GIS services, dashboard development, and custom application
 development using the ArcGIS platform.
 
-[Live Web Application](https://dalmarr.github.io/Coastal-BC-Forestry-Operations-Viewer/webapp/)
+## [Live Web Application](https://dalmarr.github.io/Coastal-BC-Forestry-Operations-Viewer/webapp/)
 ![Live web application screenshot](images/application.png)
 
 ---
 
-[ArcGIS Dashboard](https://sqg.maps.arcgis.com/apps/dashboards/0630960a921a4c0a94dac14c3e672151#)
+## [ArcGIS Dashboard](https://sqg.maps.arcgis.com/apps/dashboards/0630960a921a4c0a94dac14c3e672151#)
 ![Dashboard](images/dashboard.png)
 
 ---
 
-[ArcGIS Online Web Map](https://sqg.maps.arcgis.com/apps/mapviewer/index.html?webmap=24aa3af7044247798c4ecf2d001fde60)
+## [ArcGIS Online Web Map](https://sqg.maps.arcgis.com/apps/mapviewer/index.html?webmap=24aa3af7044247798c4ecf2d001fde60)
 ![Web Map](images/web-map.png)
 
 The project combines public Government of British Columbia forest inventory,
