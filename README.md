@@ -17,7 +17,7 @@ Vancouver Island.
 > statuses, schedules, personnel, and related business attributes are synthetic.
 > This project is not affiliated with or representative of any real-world data 
 > belonging to or produced any forestry company.
->
+
 > ## Overview
 
 The Coastal BC Forestry Operations Viewer is an independent web GIS project designed to demonstrate an end-to-end forestry-oriented GIS operational planning.
