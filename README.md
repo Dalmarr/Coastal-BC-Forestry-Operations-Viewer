@@ -66,7 +66,6 @@ Vancouver Island.
   - [Forest Roads](#forest-roads)
   - [Stream Network](#stream-network)
   - [Synthetic Operational Data](#synthetic-operational-data)
-- [Purpose](#purpose)
 
  ## Overview
 
