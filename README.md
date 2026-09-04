@@ -443,7 +443,10 @@ Key limitations include:
 - authentication and role-based access are simplified for portfolio access;
 - the application is not intended for forestry, environmental, engineering, or land-management decision-making.
 
-## Vegetation Resources Inventory
+
+## Data Sources
+
+### Vegetation Resources Inventory
 
 __Government of British Columbia - VRI 2025 Forest Vegetation Composite Polygons__
 
