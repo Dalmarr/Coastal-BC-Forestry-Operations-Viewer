@@ -367,6 +367,49 @@ The dashboard complements the custom web application by providing a monitoring-o
 - Operational and reference-layer organization
 
 ### Coordinate System
-Project data were prepared using: __NAD 1983 BC Environment Albers — EPSG:3005__
+Project data were prepared using: __NAD 1983 BC Environment Albers (EPSG:3005)__
 
-## 
+## QA and Testing
+
+The project was tested throughout development to confirm both GIS and application functionality.
+
+### Data QA
+
+Checks included:
+
+- unique planning-unit IDs
+- unique observation IDs
+- valid domain values
+- related planning-unit IDs
+- null-value review
+- geometry review
+- spatial-reference consistency
+- removal of temporary geoprocessing fields
+- removal of unnecessary publishing fields
+- verification of road and stream proximity values
+- validation of VRI-derived attributes
+
+
+### Web Application Testing
+
+Application testing included:
+
+- individual planning-unit filters
+- combined planning-unit filters
+- field-observation severity filters
+- field-observation status filters
+- Clear Filters functionality
+- planning-unit feature selection
+- retrieval of full hosted feature attributes
+- cross-layer observation queries
+- Previous / Next observation navigation
+- planning units with different observation counts
+- ArcGIS pop-up functionality
+- Layer List functionality
+- Legend functionality
+- anonymous access to public services
+- browser refresh behaviour
+
+The application was also tested through its public GitHub Pages deployment.
+
+
