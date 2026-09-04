@@ -1,4 +1,4 @@
-# Coastal BC Forestry Operations Viewer
+# 🌳 Coastal BC Forestry Operations Viewer
 
 An independent web GIS project demonstrating forestry-oriented spatial data
 management, hosted GIS services, dashboard development, and custom application
