@@ -34,9 +34,13 @@
 
         <calcite-shell-panel id="sidePanel" slot="panel-start" position="start" width-scale="l">
 
-            <calcite-panel heading="Filters">
+            <calcite-panel heading="Filters" description="Refine operational features shown on the map">
 
-                <calcite-block heading="Planning Units" expanded>
+                <calcite-block 
+                class= "filter block" 
+                heading="Planning Units" 
+                description="Planning and activity areas" 
+                collapsible expanded>
 
                     <calcite-label>
                         Status
@@ -85,7 +89,11 @@
                 </calcite-block>
 
 
-                <calcite-block heading="Field Observations" expanded>
+                <calcite-block 
+                class="filter-block"
+                heading="Field Observations"
+                description="Field-recorded operational observations"
+                collapsible expanded>
 
                     <calcite-label>
                         Severity
@@ -116,11 +124,14 @@
 
                 </calcite-block>
 
-
-                <calcite-button id="clearFilters" width="full" appearance="outline">
-                    Clear Filters
+            <div slot="footer" class="filter-footer">
+                <calcite-button 
+                id="clearFilters" 
+                width="full" 
+                appearance="outline">
+                Clear Filters
                 </calcite-button>
-
+            </div>
             </calcite-panel>
 
         </calcite-shell-panel>
