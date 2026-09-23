@@ -1,3 +1,5 @@
+import { acknowledgeFilter } from "./animations.js";
+
 //Set up the planning unit and field observation filters
 export function setupFilters(planningLayer, observationsLayer) {
 
@@ -56,17 +58,32 @@ export function setupFilters(planningLayer, observationsLayer) {
 
 
     //Run planning unit filters when a dropdown changes
-    unitStatus.addEventListener("calciteSelectChange", filterPlanningUnits);
+    unitStatus.addEventListener("calciteSelectChange", () => {
+        filterPlanningUnits();
+        acknowledgeFilter(unitStatus);
+    });
 
-    unitPriority.addEventListener("calciteSelectChange", filterPlanningUnits);
+    unitPriority.addEventListener("calciteSelectChange", () => {
+        filterPlanningUnits();
+        acknowledgeFilter(unitPriority);
+    });
 
-    unitActivity.addEventListener("calciteSelectChange", filterPlanningUnits);
+    unitActivity.addEventListener("calciteSelectChange", () => {
+        filterPlanningUnits();
+        acknowledgeFilter(unitActivity);
+    });
 
 
     //Run field observation filters when a dropdown changes
-    obsSeverity.addEventListener("calciteSelectChange", filterObservations);
+    obsSeverity.addEventListener("calciteSelectChange", () => {
+        filterObservations();
+        acknowledgeFilter(obsSeverity);
+    });
 
-    obsStatus.addEventListener("calciteSelectChange", filterObservations);
+    obsStatus.addEventListener("calciteSelectChange", () => {
+        filterObservations();
+        acknowledgeFilter(obsStatus);
+    });
 
 
     //Reset all filter controls and layer expressions

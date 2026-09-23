@@ -136,7 +136,8 @@ function showObservation() {
 
     </article>
 `;
-
+    revealObservation();
+    
     //Update the observation number
     document.querySelector("#observationCounter").textContent = `${currentObservation + 1} of ${observations.length}`;
 

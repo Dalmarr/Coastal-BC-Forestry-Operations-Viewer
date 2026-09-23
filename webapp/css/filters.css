@@ -1,0 +1,50 @@
+/*
+  ---------------
+8. Filters 
+  --------------- 
+*/
+
+.filter-block {
+    margin: 0 var(--size-3) var(--size-3);
+
+    border: 1px solid var(--app-border);
+    border-radius: var(--app-radius-md);
+
+    overflow: hidden;
+
+    background: var(--app-surface);
+    box-shadow: var(--app-shadow-sm);
+
+    --calcite-block-border-color: transparent;
+
+    --calcite-block-header-background-color: var(--fog-50);
+    --calcite-block-header-background-color-hover: var(--fog-100);
+    --calcite-block-header-background-color-press: var(--fog-200);
+
+    --calcite-block-heading-text-color: var(--forest-900);
+    --calcite-block-description-text-color: var(--bark-500);
+
+    --calcite-block-collapsible-icon-color: var(--forest-700);
+    --calcite-block-collapsible-icon-color-hover: var(--forest-900);
+
+    --calcite-block-content-space: var(--size-4);
+}
+
+.filter-footer {
+    padding: var(--size-3);
+
+    border-top: 1px solid var(--app-border);
+    background: var(--fog-50);
+}
+
+#clearFilters {
+    --calcite-button-background-color: transparent;
+    --calcite-button-border-color: var(--forest-700);
+
+    --calcite-button-text-color: var(--forest-700);
+    --calcite-button-icon-color: var(--forest-700);
+
+    --calcite-button-corner-radius: var(--app-radius-sm);
+
+    --calcite-button-shadow: none;
+}

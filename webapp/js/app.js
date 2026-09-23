@@ -1,7 +1,8 @@
 //Import filtering and observation functions
 import { setupFilters } from "./filters.js";
 import { setupObservations, showRelatedObservations } from "./observations.js";
-
+import { revealPlanningUnit } from "./animations.js";
+import { revealObservation } from "./animations.js";
 
 //Get the ArcGIS map component and wait for it to load
 const mapView = document.querySelector("#mapView");
@@ -136,6 +137,7 @@ mapView.addEventListener("arcgisViewClick", async event => {
 
     </div>
 `;
+    revealPlanningUnit();
 
 
     //Load field observations related to the selected planning unit
