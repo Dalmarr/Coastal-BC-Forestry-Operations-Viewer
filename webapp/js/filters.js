@@ -51,38 +51,22 @@ export function setupFilters(planningLayer, observationsLayer) {
             filters.push(`Status = '${obsStatus.value}'`);
         }
 
-        observationsLayer.definitionExpression =
-            filters.length ? filters.join(" AND ") : null;
+        observationsLayer.definitionExpression = filters.length ? filters.join(" AND ") : null;
     }
 
 
     //Run planning unit filters when a dropdown changes
-    unitStatus.addEventListener(
-        "calciteSelectChange",
-        filterPlanningUnits
-    );
+    unitStatus.addEventListener("calciteSelectChange", filterPlanningUnits);
 
-    unitPriority.addEventListener(
-        "calciteSelectChange",
-        filterPlanningUnits
-    );
+    unitPriority.addEventListener("calciteSelectChange", filterPlanningUnits);
 
-    unitActivity.addEventListener(
-        "calciteSelectChange",
-        filterPlanningUnits
-    );
+    unitActivity.addEventListener("calciteSelectChange", filterPlanningUnits);
 
 
     //Run field observation filters when a dropdown changes
-    obsSeverity.addEventListener(
-        "calciteSelectChange",
-        filterObservations
-    );
+    obsSeverity.addEventListener("calciteSelectChange", filterObservations);
 
-    obsStatus.addEventListener(
-        "calciteSelectChange",
-        filterObservations
-    );
+    obsStatus.addEventListener("calciteSelectChange", filterObservations);
 
 
     //Reset all filter controls and layer expressions

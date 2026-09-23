@@ -13,13 +13,9 @@ await map.loadAll();
 
 
 //Find the two layers used by the custom application tools
-const planningLayer = map.allLayers.find(
-    layer => layer.title === "Planning_Units_web"
-);
+const planningLayer = map.allLayers.find(layer => layer.title === "Planning_Units_web");
 
-const observationsLayer = map.allLayers.find(
-    layer => layer.title === "Field_Observations_public"
-);
+const observationsLayer = map.allLayers.find(layer => layer.title === "Field_Observations_public");
 
 
 //Set up the filters and observation navigation
@@ -35,16 +31,13 @@ mapView.addEventListener("arcgisViewClick", async event => {
         include: [planningLayer]
     });
 
-    const hit = response.results.find(
-        result => result.type === "graphic"
-    );
+    const hit = response.results.find(result => result.type === "graphic");
 
     if (!hit) return;
 
 
     //Get the Object ID of the clicked planning unit
-    const objectId =
-        hit.graphic.attributes[planningLayer.objectIdField];
+    const objectId = hit.graphic.attributes[planningLayer.objectIdField];
 
 
     //Query the full planning unit record
@@ -65,23 +58,19 @@ mapView.addEventListener("arcgisViewClick", async event => {
 
 
     //Format selected planning unit values
-    const area =
-        a.Area_ha != null
+    const area = a.Area_ha != null
             ? `${Number(a.Area_ha).toFixed(1)} ha`
             : "—";
 
-    const averageAge =
-        a.Avg_Age_yr != null
+    const averageAge = a.Avg_Age_yr != null
             ? `${Number(a.Avg_Age_yr).toFixed(0)} yr`
             : "No VRI data";
 
-    const nearestRoad =
-        a.Nearest_Road_m != null
+    const nearestRoad = a.Nearest_Road_m != null
             ? `${Number(a.Nearest_Road_m).toFixed(0)} m`
             : "—";
 
-    const nearestStream =
-        a.Nearest_Stream_m != null
+    const nearestStream = a.Nearest_Stream_m != null
             ? `${Number(a.Nearest_Stream_m).toFixed(0)} m`
             : "—";
 

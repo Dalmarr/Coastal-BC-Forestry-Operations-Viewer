@@ -32,7 +32,7 @@
         </calcite-navigation>
 
 
-        <calcite-shell-panel id="sidePanel" slot="panel-start" position="start" width-scale="l">
+        <calcite-shell-panel id="sidePanel" slot="panel-start" position="start" width="l">
 
             <calcite-panel heading="Filters" description="Refine operational features shown on the map">
 
@@ -180,11 +180,11 @@
             <arcgis-zoom slot="top-left"></arcgis-zoom>
             <arcgis-home slot="top-left"></arcgis-home>
 
-            <arcgis-expand slot="top-right">
+            <arcgis-expand slot="top-right" group="map-tools" label="Layers" expand-tooltip="Layers">
                 <arcgis-layer-list></arcgis-layer-list>
             </arcgis-expand>
 
-            <arcgis-expand slot="top-right">
+            <arcgis-expand slot="top-right" group="map-tools" label="Legend" expand-tooltip="Legend">
                 <arcgis-legend></arcgis-legend>
             </arcgis-expand>
 

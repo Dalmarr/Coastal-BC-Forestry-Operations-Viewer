@@ -137,16 +137,12 @@ function showObservation() {
     </article>
 `;
 
-
     //Update the observation number
-    document.querySelector("#observationCounter").textContent =
-        `${currentObservation + 1} of ${observations.length}`;
+    document.querySelector("#observationCounter").textContent = `${currentObservation + 1} of ${observations.length}`;
 
 
     //Disable navigation buttons at the beginning and end
-    document.querySelector("#previousObservation").disabled =
-        currentObservation === 0;
+    document.querySelector("#previousObservation").disabled = currentObservation === 0;
 
-    document.querySelector("#nextObservation").disabled =
-        currentObservation === observations.length - 1;
+    document.querySelector("#nextObservation").disabled = currentObservation === observations.length - 1;
 }
