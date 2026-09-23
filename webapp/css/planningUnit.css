@@ -5,10 +5,12 @@
 */
 
 #selectedUnitBlock {
+    height: 100%;
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
     border: 1px solid var(--app-border);
     border-radius: var(--app-radius-md);
-    min-width: 0;
-    overflow: hidden;
     background: var(--app-surface);
     box-shadow: var(--app-shadow-sm);
     --calcite-block-border-color: transparent;

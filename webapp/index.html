@@ -6,13 +6,13 @@
 
     <meta charset="utf-8">
 
-    <meta name="description" content="Independent forestry web GIS for coastal British Columbia built with ArcGIS Online and the ArcGIS Maps SDK for JavaScript.">
+    <meta name="description"
+        content="Independent forestry web GIS for coastal British Columbia built with ArcGIS Online and the ArcGIS Maps SDK for JavaScript.">
 
     <title>Coastal BC Forestry Operations Viewer</title>
 
     <script type="module" src="https://js.arcgis.com/5.1/"></script>
-    <script type="module" src="js/app.js">
-    </script>
+    <script type="module" src="js/app.js"></script>
 
     <link rel="stylesheet" href="./css/tokens.css">
     <link rel="stylesheet" href="./css/shell.css">
@@ -29,6 +29,10 @@
 
     <calcite-shell>
 
+        <!-- =========================
+             Navigation
+             ========================= -->
+
         <calcite-navigation slot="header">
 
             <calcite-navigation-logo slot="logo" heading="Coastal BC Forestry Operations Viewer"
@@ -38,15 +42,18 @@
         </calcite-navigation>
 
 
+        <!-- =========================
+             Filter Sidebar
+             ========================= -->
+
         <calcite-shell-panel id="sidePanel" slot="panel-start" position="start" width="m">
 
             <calcite-panel heading="Filters" description="Refine operational features shown on the map">
 
-                <calcite-block 
-                class= "filter block" 
-                heading="Planning Units" 
-                description="Planning and activity areas" 
-                collapsible expanded>
+                <!-- Planning Unit Filters -->
+
+                <calcite-block class="filter-block" heading="Planning Units" description="Planning and activity areas"
+                    collapsible expanded>
 
                     <calcite-label>
                         Status
@@ -95,11 +102,10 @@
                 </calcite-block>
 
 
-                <calcite-block 
-                class="filter-block"
-                heading="Field Observations"
-                description="Field-recorded operational observations"
-                collapsible expanded>
+                <!-- Field Observation Filters -->
+
+                <calcite-block class="filter-block" heading="Field Observations"
+                    description="Field-recorded operational observations" collapsible expanded>
 
                     <calcite-label>
                         Severity
@@ -130,74 +136,113 @@
 
                 </calcite-block>
 
-            <div slot="footer" class="filter-footer">
-                <calcite-button 
-                id="clearFilters" 
-                width="full" 
-                appearance="outline">
-                Clear Filters
-                </calcite-button>
-            </div>
+
+                <!-- Filter Footer -->
+
+                <div slot="footer" class="filter-footer">
+
+                    <calcite-button id="clearFilters" width="full" appearance="outline">
+                        Clear Filters
+                    </calcite-button>
+
+                </div>
+
             </calcite-panel>
 
         </calcite-shell-panel>
 
 
-        <div id="detailRow">
+        <!-- =========================
+             Main Workspace
+             ========================= -->
 
-            <calcite-block id="selectedUnitBlock" heading="Selected Planning Unit" expanded>
+        <div id="workspace">
 
-                <div id="unitDetails">
-                    <div class="unit-empty-state">
-                        Select a planning unit on the map to view operational details.
+
+            <!-- =========================
+                 Operational Detail Row
+                 ========================= -->
+
+            <div id="detailRow">
+
+
+                <!-- Selected Planning Unit -->
+
+                <calcite-block id="selectedUnitBlock" heading="Selected Planning Unit" expanded>
+
+                    <div id="unitDetails">
+
+                        <div class="unit-empty-state">
+                            Select a planning unit on the map to view operational details.
+                        </div>
+
                     </div>
-                </div>
 
-            </calcite-block>
+                </calcite-block>
 
 
-            <calcite-block id="observationsBlock" heading="Related Field Observations" expanded>
+                <!-- Related Field Observations -->
 
-                <div id="observationResults">
-                    <p>Select a planning unit to view observations.</p>
-                </div>
+                <calcite-block id="observationsBlock" heading="Related Field Observations" expanded>
 
-                <div id="observationNavigation" hidden>
+                    <div id="observationResults">
 
-                    <calcite-button id="previousObservation" appearance="outline" scale="s">
-                        Previous
-                    </calcite-button>
+                        <p>
+                            Select a planning unit to view observations.
+                        </p>
 
-                    <span id="observationCounter"></span>
+                    </div>
 
-                    <calcite-button id="nextObservation" appearance="outline" scale="s">
-                        Next
-                    </calcite-button>
 
-                </div>
+                    <div id="observationNavigation" hidden>
 
-            </calcite-block>
+                        <calcite-button id="previousObservation" appearance="outline" scale="s">
+                            Previous
+                        </calcite-button>
+
+                        <span id="observationCounter"></span>
+
+                        <calcite-button id="nextObservation" appearance="outline" scale="s">
+                            Next
+                        </calcite-button>
+
+                    </div>
+
+                </calcite-block>
+
+            </div>
+
+
+            <!-- =========================
+                 Map
+                 ========================= -->
+
+            <arcgis-map id="mapView" item-id="24aa3af7044247798c4ecf2d001fde60">
+
+                <arcgis-zoom slot="top-left"></arcgis-zoom>
+
+                <arcgis-home slot="top-left"></arcgis-home>
+
+
+                <arcgis-expand slot="top-right" group="map-tools" label="Layers" expand-tooltip="Layers">
+
+                    <arcgis-layer-list></arcgis-layer-list>
+
+                </arcgis-expand>
+
+
+                <arcgis-expand slot="top-right" group="map-tools" label="Legend" expand-tooltip="Legend">
+
+                    <arcgis-legend></arcgis-legend>
+
+                </arcgis-expand>
+
+            </arcgis-map>
 
         </div>
 
-
-        <arcgis-map id="mapView" item-id="24aa3af7044247798c4ecf2d001fde60">
-
-            <arcgis-zoom slot="top-left"></arcgis-zoom>
-            <arcgis-home slot="top-left"></arcgis-home>
-
-            <arcgis-expand slot="top-right" group="map-tools" label="Layers" expand-tooltip="Layers">
-                <arcgis-layer-list></arcgis-layer-list>
-            </arcgis-expand>
-
-            <arcgis-expand slot="top-right" group="map-tools" label="Legend" expand-tooltip="Legend">
-                <arcgis-legend></arcgis-legend>
-            </arcgis-expand>
-
-        </arcgis-map>
-
-
     </calcite-shell>
+
 </body>
 
 </html>

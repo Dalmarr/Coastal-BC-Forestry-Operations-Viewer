@@ -8,6 +8,7 @@ arcgis-legend {
 arcgis-map {
     width: 100%;
     height: 100%;
+    min-height: 0;
     --calcite-action-background-color: rgba(255, 255, 255, 0.96);
     --calcite-action-background-color-hover: var(--fog-100);
     --calcite-action-background-color-press: var(--fog-200);
