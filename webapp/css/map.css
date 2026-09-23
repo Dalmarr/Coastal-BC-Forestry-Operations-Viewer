@@ -1,0 +1,30 @@
+/* Map UI */
+arcgis-layer-list,
+arcgis-legend {
+    width: 320px;
+    max-width: min(320px, calc(100vw - 48px));
+}
+
+arcgis-map {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    --calcite-action-background-color: rgba(255, 255, 255, 0.96);
+    --calcite-action-background-color-hover: var(--fog-100);
+    --calcite-action-background-color-press: var(--fog-200);
+    --calcite-action-text-color: var(--forest-900);
+    --calcite-action-text-color-press: var(--forest-950);
+    --calcite-action-corner-radius: var(--app-radius-sm);
+    --arcgis-layout-overlay-space-top: var(--size-2);
+    --arcgis-layout-overlay-space-right: var(--size-2);
+    --arcgis-layout-overlay-space-bottom: var(--size-2);
+    --arcgis-layout-overlay-space-left: var(--size-2);
+    border-top: 1px solid var(--app-border);
+}
+
+/* Map controls */
+arcgis-zoom,
+arcgis-home,
+arcgis-expand {
+    filter: drop-shadow(0 2px 5px rgba(23, 56, 43, 0.12));
+}

@@ -1,0 +1,78 @@
+/* Open Props import */
+@import "https://unpkg.com/open-props@1.7.23/open-props.min.css";
+
+/*
+---------------------
+PROJECT DESIGN SYSTEM
+---------------------
+*/
+
+/*
+  ---------------
+1. Design tokens 
+  --------------- 
+*/
+:root {
+    /* Domain palette */
+    --forest-950: #17382b;
+    --forest-900: #1d4434;
+    --forest-700: #2f654a;
+    --forest-600: #3d7659;
+
+    --moss-600: #687b62;
+    --moss-400: #91a08a;
+
+    --pacific-700: #356772;
+    --pacific-500: #4f8590;
+
+    --cedar-600: #95633e;
+    --cedar-400: #b7835a;
+
+    --fog-50: #f7f9f7;
+    --fog-100: #eef2ee;
+    --fog-200: #e4eae5;
+
+    --bark-900: #29312c;
+    --bark-700: #4b5850;
+    --bark-500: #6e7b73;
+
+    /* Application tokens */
+    --app-header: var(--forest-950);
+    --app-background: var(--fog-100);
+    --app-surface: #ffffff;
+    --app-border: #d5ddd7;
+
+    --app-radius-sm: var(--radius-2);
+    --app-radius-md: var(--radius-3);
+
+    --app-shadow-sm: var(--shadow-1);
+    --app-shadow-md: var(--shadow-2);
+
+    --app-transition-fast: 160ms var(--ease-3);
+    --app-transition-normal: 220ms var(--ease-3);
+
+    /* Calcite theme */
+    --calcite-color-brand: var(--forest-700);
+    --calcite-color-brand-hover: var(--forest-600);
+    --calcite-color-brand-press: var(--forest-900);
+
+    --calcite-color-surface-1: var(--fog-100);
+    --calcite-color-surface-2: #ffffff;
+    --calcite-color-surface-3: var(--fog-200);
+    --calcite-color-surface-4: #d9e1da;
+
+    --calcite-color-text-1: var(--bark-900);
+    --calcite-color-text-2: var(--bark-700);
+    --calcite-color-text-3: var(--bark-500);
+
+    --calcite-color-border-1: #c8d2ca;
+    --calcite-color-border-2: #d6ded8;
+    --calcite-color-border-3: #e5eae6;
+
+    --calcite-color-text-link: var(--forest-700);
+
+    --calcite-color-status-info: var(--pacific-700);
+    --calcite-color-status-success: var(--forest-600);
+    --calcite-color-status-warning: #b67a24;
+    --calcite-color-status-danger: #b64d43;
+}

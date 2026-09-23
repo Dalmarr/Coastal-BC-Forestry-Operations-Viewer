@@ -1,0 +1,188 @@
+/*
+  ---------------
+7. Observations 
+  --------------- 
+*/
+#observationResults calcite-card {
+    width: 100%;
+}
+#observationResults {
+    overflow-y: auto;
+    padding-right: var(--size-1);
+}
+#observationNavigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--size-2);
+    margin-top: var(--size-3);
+    padding-top: var(--size-3);
+    border-top: 1px solid var(--app-border);
+}
+#observationNavigation calcite-button {
+    --calcite-button-corner-radius: var(--app-radius-sm);
+}
+#observationCounter {
+    white-space: nowrap;
+    color: var(--bark-500);
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+#observationsBlock {
+    height: 100%;
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+    border: 1px solid var(--app-border);
+    border-radius: var(--app-radius-md);
+    background: var(--app-surface);
+    box-shadow: var(--app-shadow-sm);
+    --calcite-block-border-color: transparent;
+    --calcite-block-header-background-color: var(--fog-50);
+    --calcite-block-heading-text-color: var(--forest-900);
+    --calcite-block-content-space: var(--size-4);
+}
+.observation-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-3);
+}
+.observation-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--size-3);
+}
+.observation-eyebrow {
+    display: block;
+    margin-bottom: var(--size-1);
+    color: var(--bark-500);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.observation-id {
+    margin: 0;
+    color: var(--forest-950);
+    font-size: 1.2rem;
+    font-weight: 650;
+    line-height: 1.2;
+}
+.observation-type {
+    padding: var(--size-3);
+    border-left: 3px solid var(--pacific-700);
+    border-radius: var(--app-radius-sm);
+    background: var(--fog-50);
+    color: var(--bark-900);
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+/*
+  ---------
+7a. Badges 
+  ---------
+*/
+.observation-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: var(--size-2);
+}
+.observation-badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+    padding: 2px 8px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+}
+/*
+  ----------
+7b. Severity 
+  ----------
+*/
+.observation-severity[data-severity="Low"] {
+    background: var(--fog-100);
+    border-color: var(--app-border);
+    color: var(--moss-600);
+}
+.observation-severity[data-severity="Moderate"] {
+    background: #e7eff1;
+    border-color: #bfd2d6;
+    color: var(--pacific-700);
+}
+.observation-severity[data-severity="High"] {
+    background: #f7ead7;
+    border-color: #e7c48c;
+    color: #855a19;
+}
+.observation-severity[data-severity="Critical"] {
+    background: #f7e2df;
+    border-color: #e4b5af;
+    color: #9d3f38;
+}
+/*
+  ---------
+7c. Status 
+  ---------
+*/
+.observation-status[data-status="Open"] {
+    background: #f7ecd8;
+    border-color: #e6c88d;
+    color: #785217;
+}
+.observation-status[data-status="Under Review"] {
+    background: #e7eff1;
+    border-color: #bfd2d6;
+    color: var(--pacific-700);
+}
+.observation-status[data-status="Resolved"] {
+    background: #e1eee6;
+    border-color: #bad3c3;
+    color: var(--forest-700);
+}
+.observation-status[data-status="Deferred"] {
+    background: #eeeae6;
+    border-color: #d9cec5;
+    color: #67564a;
+}
+/*
+  ---------------
+7d. Crew + Source 
+  --------------- 
+*/
+.observation-metadata {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--size-3);
+    margin: 0;
+}
+.observation-metadata>div {
+    min-width: 0;
+    padding: var(--size-2) var(--size-3);
+    border: 1px solid var(--app-border);
+    border-radius: var(--app-radius-sm);
+    background: var(--fog-50);
+}
+.observation-metadata dt {
+    margin: 0 0 var(--size-1);
+    color: var(--bark-500);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.035em;
+    text-transform: uppercase;
+}
+.observation-metadata dd {
+    margin: 0;
+    color: var(--bark-900);
+    font-size: 0.9rem;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}

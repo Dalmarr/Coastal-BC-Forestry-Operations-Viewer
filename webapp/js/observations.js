@@ -37,11 +37,9 @@ export function setupObservations(layer) {
 //Query observations related to a selected planning unit
 export async function showRelatedObservations(unitId) {
 
-    const results =
-        document.querySelector("#observationResults");
+    const results = document.querySelector("#observationResults");
 
-    const navigation =
-        document.querySelector("#observationNavigation");
+    const navigation = document.querySelector("#observationNavigation");
 
 
     //Show a temporary loading message
@@ -60,15 +58,14 @@ export async function showRelatedObservations(unitId) {
         "Severity",
         "Status",
         "Crew",
-        "Source"
+        "Notes"
     ];
 
     query.returnGeometry = false;
 
 
     //Run the query and store the returned records
-    const response =
-        await observationsLayer.queryFeatures(query);
+    const response = await observationsLayer.queryFeatures(query);
 
     observations = response.features;
     currentObservation = 0;
@@ -76,10 +73,7 @@ export async function showRelatedObservations(unitId) {
 
     //Handle planning units with no related observations
     if (observations.length === 0) {
-
-        results.innerHTML =
-            "<p>No field observations for this planning unit.</p>";
-
+        results.innerHTML = "<p>No field observations for this planning unit.</p>";
         return;
     }
 
@@ -93,38 +87,63 @@ export async function showRelatedObservations(unitId) {
 
 //Display the current observation
 function showObservation() {
-
-    const a =
-        observations[currentObservation].attributes;
+    const observation = observations[currentObservation];
+    const a = observations[currentObservation].attributes;
 
 
     //Build the observation card
     document.querySelector("#observationResults").innerHTML = `
-        <calcite-card>
+         <article class="observation-card">
 
-            <span slot="heading">${a.Obs_ID}</span>
-            <span slot="description">${a.Obs_Type}</span>
+        <div class="observation-header">
+            <div>
+                <span class="observation-eyebrow">Field observation</span>
+                <h3 class="observation-id">${a.Obs_ID ?? "Observation"}</h3>
+            </div>
 
-            <p>
-                <b>Severity:</b> ${a.Severity}<br>
-                <b>Status:</b> ${a.Status}<br>
-                <b>Crew:</b> ${a.Crew}<br>
-                <b>Source:</b> ${a.Source}
-            </p>
+            <div class="observation-badges">
+                <span
+                    class="observation-badge observation-severity"
+                    data-severity="${a.Severity}">
+                    ${a.Severity ?? "Unknown"}
+                </span>
 
-        </calcite-card>
-    `;
+                <span
+                    class="observation-badge observation-status"
+                    data-status="${a.Status}">
+                    ${a.Status ?? "Unknown"}
+                </span>
+            </div>
+        </div>
 
+        <div class="observation-type">
+            ${a.Obs_Type ?? "Unspecified observation"}
+        </div>
 
+        <dl class="observation-metadata">
+
+            <div>
+                <dt>Crew</dt>
+                <dd>${a.Crew ?? "—"}</dd>
+            </div>
+
+            <div>
+                <dt>Source</dt>
+                <dd>${a.Notes ?? "—"}</dd>
+            </div>
+
+        </dl>
+
+    </article>
+`;
+    revealObservation();
+    
     //Update the observation number
-    document.querySelector("#observationCounter").textContent =
-        `${currentObservation + 1} of ${observations.length}`;
+    document.querySelector("#observationCounter").textContent = `${currentObservation + 1} of ${observations.length}`;
 
 
     //Disable navigation buttons at the beginning and end
-    document.querySelector("#previousObservation").disabled =
-        currentObservation === 0;
+    document.querySelector("#previousObservation").disabled = currentObservation === 0;
 
-    document.querySelector("#nextObservation").disabled =
-        currentObservation === observations.length - 1;
+    document.querySelector("#nextObservation").disabled = currentObservation === observations.length - 1;
 }

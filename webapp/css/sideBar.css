@@ -1,0 +1,54 @@
+/*
+---------------
+4. Sidebar 
+--------------- 
+*/
+
+#sidePanel {
+    height: 100%;
+    overflow-y: auto;
+    background: var(--app-surface);
+    border-right: 1px solid var(--app-border);
+    box-shadow: var(--app-shadow-md);
+}
+
+#sidePanel calcite-panel {
+    --calcite-panel-background-color: var(--app-surface);
+    --calcite-panel-header-background-color: var(--app-surface);
+    --calcite-panel-heading-text-color: var(--forest-950);
+    --calcite-panel-description-text-color: var(--bark-500);
+    --calcite-panel-border-color: var(--app-border);
+    --calcite-panel-space: var(--size-3);
+    --calcite-panel-header-content-space: var(--size-4);
+    --calcite-panel-footer-background-color: var(--fog-50);
+    --calcite-panel-footer-space: 0;
+}
+
+#sidePanel calcite-label {
+    --calcite-label-margin-bottom: var(--size-3);
+    color: var(--bark-700);
+    font-weight: var(--calcite-font-weight-medium);
+}
+
+#sidePanel calcite-select {
+    width: 100%;
+    --calcite-select-background-color: #ffffff;
+    --calcite-select-border-color: var(--app-border);
+    --calcite-select-text-color: var(--bark-900);
+    --calcite-select-icon-color: var(--forest-700);
+    --calcite-select-icon-color-hover: var(--forest-900);
+    --calcite-select-corner-radius: var(--app-radius-sm);
+    --calcite-select-shadow: none;
+    transition:
+        border-color var(--app-transition-fast),
+        box-shadow var(--app-transition-fast);
+}
+
+#sidePanel calcite-select:hover {
+    --calcite-select-border-color: var(--moss-400);
+}
+
+#sidePanel calcite-select:focus-within {
+    --calcite-select-border-color: var(--forest-600);
+    box-shadow: 0 0 0 2px rgba(61, 118, 89, 0.12);
+}

@@ -1,0 +1,65 @@
+/*
+  ---------------
+2. App shell 
+  --------------- 
+*/
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: var(--app-background);
+    color: var(--calcite-color-text-1);
+
+    font-family:
+        "Avenir Next",
+        "Avenir",
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+}
+
+calcite-shell {
+    width: 100%;
+    height: 100vh;
+    background: var(--app-background);
+}
+
+/*
+  ---------------
+3. Navigation 
+  --------------- 
+*/
+
+calcite-navigation {
+    --calcite-navigation-background-color: var(--app-header);
+    --calcite-navigation-border-color: var(--forest-900);
+}
+
+calcite-navigation-logo {
+    --calcite-navigation-background-color: transparent;
+    --calcite-navigation-logo-heading-text-color: #f7faf8;
+    --calcite-navigation-logo-text-color: #c7d5cc;
+}
+
+#detailRow {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: var(--size-3);
+    align-items: stretch;
+    min-height: 0;
+    overflow: hidden;
+    padding: var(--size-3);
+    background: var(--fog-100);
+    border-bottom: 1px solid var(--app-border);
+}
+
+#workspace {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: minmax(0, 3fr) minmax(0, 5fr);
+  overflow: hidden;
+}
